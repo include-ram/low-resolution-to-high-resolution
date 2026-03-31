@@ -1,0 +1,187 @@
+(base) [garimella.sri@c2193 Super resolution project]$ python test_minimal_rrdb.py --world_size 2
+Rank 0: Starting process
+Rank 0 created store file: /home/garimella.sri/Super resolution project/output/torch_ddp_store/store_1745431811
+Rank 1: Starting process
+Rank 0: Initializing with file store: /home/garimella.sri/Super resolution project/output/torch_ddp_store/store_1745431811
+Rank 1: Initializing with file store: /home/garimella.sri/Super resolution project/output/torch_ddp_store/store_1745431811
+Rank 0: Successfully initialized process group
+Rank 0: Process initialized
+Rank 1: Successfully initialized process group
+Rank 1: Process initialized
+Epoch 1, Batch 0, G Loss: 0.3920 (Pixel: 0.2457, Content: 1.4151, Adv: 0.9711), D Loss: 0.5147, Batch Time: 0.5090s
+Saved sample images for epoch 1 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch1_img1.png
+
+--- Timing Statistics for Epoch 1 ---
+Epoch Duration: 7.91 seconds
+Average Batch Time: 0.1075 seconds
+Average Generator Forward Time: 0.0420 seconds
+Average Generator Backward Time: 0.0427 seconds
+Average Discriminator Forward Time: 0.0181 seconds
+Average Discriminator Backward Time: 0.0025 seconds
+Time Breakdown: G-Forward (39.1%), G-Backward (39.8%), D-Forward (16.8%), D-Backward (2.3%), Other (2.0%)
+Completed 1/5 epochs
+Average epoch time: 7.91 seconds
+Estimated total training time: 39.55 seconds
+-------------------------------------------
+
+Epoch 2, Batch 0, G Loss: 0.3255 (Pixel: 0.1677, Content: 1.5252, Adv: 1.0460), D Loss: 0.4793, Batch Time: 0.0180s
+Saved sample images for epoch 2 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch2_img1.png
+
+--- Timing Statistics for Epoch 2 ---
+Epoch Duration: 7.11 seconds
+Average Batch Time: 0.0182 seconds
+Average Generator Forward Time: 0.0051 seconds
+Average Generator Backward Time: 0.0071 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0024 seconds
+Time Breakdown: G-Forward (27.9%), G-Backward (38.7%), D-Forward (8.4%), D-Backward (13.1%), Other (12.0%)
+Completed 2/5 epochs
+Average epoch time: 7.51 seconds
+Estimated total training time: 37.55 seconds
+-------------------------------------------
+
+Epoch 3, Batch 0, G Loss: 0.1970 (Pixel: 0.0558, Content: 1.3598, Adv: 1.0397), D Loss: 0.4864, Batch Time: 0.0184s
+Saved sample images for epoch 3 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch3_img1.png
+
+--- Timing Statistics for Epoch 3 ---
+Epoch Duration: 7.07 seconds
+Average Batch Time: 0.0179 seconds
+Average Generator Forward Time: 0.0049 seconds
+Average Generator Backward Time: 0.0069 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0024 seconds
+Time Breakdown: G-Forward (27.4%), G-Backward (38.5%), D-Forward (8.5%), D-Backward (13.6%), Other (12.0%)
+Completed 3/5 epochs
+Average epoch time: 7.36 seconds
+Estimated total training time: 36.82 seconds
+-------------------------------------------
+
+Epoch 4, Batch 0, G Loss: 0.1861 (Pixel: 0.0525, Content: 1.2879, Adv: 0.9630), D Loss: 0.5172, Batch Time: 0.0179s
+Saved sample images for epoch 4 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch4_img1.png
+
+--- Timing Statistics for Epoch 4 ---
+Epoch Duration: 7.05 seconds
+Average Batch Time: 0.0179 seconds
+Average Generator Forward Time: 0.0049 seconds
+Average Generator Backward Time: 0.0069 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0024 seconds
+Time Breakdown: G-Forward (27.4%), G-Backward (38.7%), D-Forward (8.4%), D-Backward (13.3%), Other (12.1%)
+Completed 4/5 epochs
+Average epoch time: 7.29 seconds
+Estimated total training time: 36.43 seconds
+-------------------------------------------
+
+Epoch 5, Batch 0, G Loss: 0.1967 (Pixel: 0.0521, Content: 1.3946, Adv: 1.0282), D Loss: 0.4844, Batch Time: 0.0181s
+Rank 1: Process group destroyed successfully
+Saved sample images for epoch 5 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch5_img1.png
+
+--- Timing Statistics for Epoch 5 ---
+Epoch Duration: 7.03 seconds
+Average Batch Time: 0.0180 seconds
+Average Generator Forward Time: 0.0051 seconds
+Average Generator Backward Time: 0.0068 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0024 seconds
+Time Breakdown: G-Forward (28.4%), G-Backward (37.9%), D-Forward (8.4%), D-Backward (13.3%), Other (11.9%)
+Completed 5/5 epochs
+Average epoch time: 7.23 seconds
+Estimated total training time: 36.17 seconds
+-------------------------------------------
+
+Created performance plots at: /home/garimella.sri/Super resolution project/output/plots/performance_scaling.png
+Rank 0: Process group destroyed successfully
+(base) [garimella.sri@c2193 Super resolution project]$ python test_minimal_rrdb.py --world_size 1
+Rank 0: Starting process
+Rank 0 created store file: /home/garimella.sri/Super resolution project/output/torch_ddp_store/store_1745432199
+Rank 0: Initializing with file store: /home/garimella.sri/Super resolution project/output/torch_ddp_store/store_1745432199
+Rank 0: Successfully initialized process group
+Rank 0: Process initialized
+Epoch 1, Batch 0, G Loss: 0.3988 (Pixel: 0.2392, Content: 1.5457, Adv: 1.0062), D Loss: 0.4970, Batch Time: 0.4023s
+Epoch 1, Batch 10, G Loss: 0.2106 (Pixel: 0.0596, Content: 1.4595, Adv: 1.0072), D Loss: 0.5079, Batch Time: 0.0186s
+Saved sample images for epoch 1 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch1_img1.png
+
+--- Timing Statistics for Epoch 1 ---
+Epoch Duration: 13.99 seconds
+Average Batch Time: 0.0498 seconds
+Average Generator Forward Time: 0.0255 seconds
+Average Generator Backward Time: 0.0182 seconds
+Average Discriminator Forward Time: 0.0016 seconds
+Average Discriminator Backward Time: 0.0023 seconds
+Time Breakdown: G-Forward (51.1%), G-Backward (36.5%), D-Forward (3.1%), D-Backward (4.7%), Other (4.5%)
+Completed 1/5 epochs
+Average epoch time: 13.99 seconds
+Estimated total training time: 69.93 seconds
+-------------------------------------------
+
+Epoch 2, Batch 0, G Loss: 0.2089 (Pixel: 0.0699, Content: 1.3427, Adv: 0.9497), D Loss: 0.5271, Batch Time: 0.0184s
+Epoch 2, Batch 10, G Loss: 0.2031 (Pixel: 0.0550, Content: 1.4296, Adv: 1.0222), D Loss: 0.4884, Batch Time: 0.0174s
+Saved sample images for epoch 2 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch2_img1.png
+
+--- Timing Statistics for Epoch 2 ---
+Epoch Duration: 13.43 seconds
+Average Batch Time: 0.0180 seconds
+Average Generator Forward Time: 0.0051 seconds
+Average Generator Backward Time: 0.0069 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0023 seconds
+Time Breakdown: G-Forward (28.4%), G-Backward (38.4%), D-Forward (8.4%), D-Backward (12.7%), Other (12.1%)
+Completed 2/5 epochs
+Average epoch time: 13.71 seconds
+Estimated total training time: 68.55 seconds
+-------------------------------------------
+
+Epoch 3, Batch 0, G Loss: 0.1929 (Pixel: 0.0509, Content: 1.3692, Adv: 1.0210), D Loss: 0.4901, Batch Time: 0.0174s
+Epoch 3, Batch 10, G Loss: 0.2175 (Pixel: 0.0452, Content: 1.6736, Adv: 1.0021), D Loss: 0.5003, Batch Time: 0.0177s
+Saved sample images for epoch 3 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch3_img1.png
+
+--- Timing Statistics for Epoch 3 ---
+Epoch Duration: 13.46 seconds
+Average Batch Time: 0.0178 seconds
+Average Generator Forward Time: 0.0051 seconds
+Average Generator Backward Time: 0.0068 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0023 seconds
+Time Breakdown: G-Forward (28.6%), G-Backward (38.0%), D-Forward (8.4%), D-Backward (12.9%), Other (12.0%)
+Completed 3/5 epochs
+Average epoch time: 13.63 seconds
+Estimated total training time: 68.14 seconds
+-------------------------------------------
+
+Epoch 4, Batch 0, G Loss: 0.1846 (Pixel: 0.0416, Content: 1.3794, Adv: 1.0032), D Loss: 0.4988, Batch Time: 0.0175s
+Epoch 4, Batch 10, G Loss: 0.2040 (Pixel: 0.0407, Content: 1.5821, Adv: 1.0180), D Loss: 0.4913, Batch Time: 0.0176s
+Saved sample images for epoch 4 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch4_img1.png
+
+--- Timing Statistics for Epoch 4 ---
+Epoch Duration: 13.45 seconds
+Average Batch Time: 0.0178 seconds
+Average Generator Forward Time: 0.0051 seconds
+Average Generator Backward Time: 0.0068 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0023 seconds
+Time Breakdown: G-Forward (28.5%), G-Backward (38.2%), D-Forward (8.4%), D-Backward (12.9%), Other (12.0%)
+Completed 4/5 epochs
+Average epoch time: 13.58 seconds
+Estimated total training time: 67.92 seconds
+-------------------------------------------
+
+Epoch 5, Batch 0, G Loss: 0.1752 (Pixel: 0.0364, Content: 1.3367, Adv: 1.0147), D Loss: 0.4936, Batch Time: 0.0176s
+Epoch 5, Batch 10, G Loss: 0.1797 (Pixel: 0.0298, Content: 1.4475, Adv: 1.0204), D Loss: 0.4906, Batch Time: 0.0173s
+Saved sample images for epoch 5 at: /home/garimella.sri/Super resolution project/output/samples/sample_epoch5_img1.png
+
+--- Timing Statistics for Epoch 5 ---
+Epoch Duration: 13.50 seconds
+Average Batch Time: 0.0176 seconds
+Average Generator Forward Time: 0.0050 seconds
+Average Generator Backward Time: 0.0068 seconds
+Average Discriminator Forward Time: 0.0015 seconds
+Average Discriminator Backward Time: 0.0023 seconds
+Time Breakdown: G-Forward (28.2%), G-Backward (38.3%), D-Forward (8.4%), D-Backward (13.0%), Other (12.0%)
+Completed 5/5 epochs
+Average epoch time: 13.57 seconds
+Estimated total training time: 67.83 seconds
+-------------------------------------------
+
+Created performance plots at: /home/garimella.sri/Super resolution project/output/plots/performance_scaling.png
+Rank 0: Process group destroyed successfully
+(base) [garimella.sri@c2193 Super resolution project]$ 

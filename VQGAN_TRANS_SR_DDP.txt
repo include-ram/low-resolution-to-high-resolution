@@ -1,0 +1,345 @@
+(base) [garimella.sri@c2195 Super resolution project]$ python -m torch.distributed.launch --nproc_per_node=1 --master_port=65432 vqgan_transformer_sr_distributed_fixed.py
+/home/garimella.sri/.local/lib/python3.12/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects --local-rank argument to be set, please
+change it to read from os.environ['LOCAL_RANK'] instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+Distributed environment detected: rank=0, world_size=1, local_rank=0
+Using 1 GPUs for training
+[rank0]:[W421 21:30:25.433624630 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Process 0/1 ready on device cuda:0
+Found 2650 image pairs
+Training VQGAN from epoch 0...
+Training VQGAN for 1 epochs starting at epoch 0...
+/home/garimella.sri/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/garimella.sri/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or None for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing weights=VGG16_Weights.IMAGENET1K_V1. You can also use weights=VGG16_Weights.DEFAULT to get the most up-to-date weights.
+  warnings.warn(msg)
+[rank0]:[W421 21:30:31.629952347 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+Epoch [1/1], Step [1/2120], Rec: 0.4741, VQ: 0.0007, Perc: 12.2559, G: 0.6922, D: 1.3942
+Epoch [1/1], Step [26/2120], Rec: 0.4095, VQ: 0.0009, Perc: 4.6879, G: 0.3812, D: 3.2841
+Epoch [1/1], Step [51/2120], Rec: 0.4591, VQ: 0.0001, Perc: 5.8334, G: 1.5158, D: 0.4393
+Epoch [1/1], Step [76/2120], Rec: 0.4669, VQ: 0.0028, Perc: 6.1456, G: 0.2816, D: 2.5762
+Epoch [1/1], Step [101/2120], Rec: 0.5520, VQ: 0.0002, Perc: 4.5944, G: 0.8536, D: 0.8816
+Epoch [1/1], Step [126/2120], Rec: 0.3549, VQ: 0.0001, Perc: 3.4204, G: 1.0705, D: 0.9758
+Epoch [1/1], Step [151/2120], Rec: 0.4226, VQ: 0.0001, Perc: 8.1644, G: 2.0713, D: 0.1699
+Epoch [1/1], Step [176/2120], Rec: 0.4119, VQ: 0.0000, Perc: 5.0012, G: 1.3442, D: 0.9068
+Epoch [1/1], Step [201/2120], Rec: 0.4231, VQ: 0.0000, Perc: 6.0236, G: 1.4818, D: 0.5136
+Epoch [1/1], Step [226/2120], Rec: 0.3921, VQ: 0.0623, Perc: 6.1438, G: 3.7444, D: 0.1270
+Epoch [1/1], Step [251/2120], Rec: 0.5742, VQ: 0.0001, Perc: 7.5472, G: 0.7477, D: 0.9598
+Epoch [1/1], Step [276/2120], Rec: 0.4053, VQ: 0.0000, Perc: 5.7875, G: 1.5318, D: 0.6321
+Epoch [1/1], Step [301/2120], Rec: 0.3877, VQ: 0.0001, Perc: 3.8184, G: 1.1947, D: 0.6516
+Epoch [1/1], Step [326/2120], Rec: 0.3743, VQ: 0.1181, Perc: 4.0820, G: 1.4159, D: 0.8611
+Epoch [1/1], Step [351/2120], Rec: 0.4244, VQ: 0.2645, Perc: 9.1082, G: 1.5786, D: 0.6598
+Epoch [1/1], Step [376/2120], Rec: 0.3095, VQ: 0.0893, Perc: 3.7600, G: 1.4091, D: 0.5893
+Epoch [1/1], Step [401/2120], Rec: 0.4876, VQ: 0.0179, Perc: 7.7648, G: 3.1224, D: 0.0991
+Epoch [1/1], Step [426/2120], Rec: 0.3443, VQ: 0.0035, Perc: 5.8702, G: 7.6714, D: 1.1085
+Epoch [1/1], Step [451/2120], Rec: 0.4018, VQ: 0.0006, Perc: 5.6758, G: 1.2375, D: 1.4840
+Epoch [1/1], Step [476/2120], Rec: 0.3840, VQ: 0.0001, Perc: 6.2760, G: 1.7503, D: 1.1805
+Epoch [1/1], Step [501/2120], Rec: 0.4717, VQ: 0.4788, Perc: 7.9772, G: 0.5769, D: 1.6931
+Epoch [1/1], Step [526/2120], Rec: 0.1867, VQ: 0.0012, Perc: 2.7827, G: 1.8576, D: 1.2278
+Epoch [1/1], Step [551/2120], Rec: 0.4409, VQ: 0.0002, Perc: 4.3229, G: 3.0875, D: 0.9602
+Epoch [1/1], Step [576/2120], Rec: 0.3603, VQ: 0.0003, Perc: 9.0324, G: 4.3188, D: 0.0530
+Epoch [1/1], Step [601/2120], Rec: 0.4558, VQ: 0.0005, Perc: 11.5978, G: 0.9179, D: 0.6811
+Epoch [1/1], Step [626/2120], Rec: 0.3737, VQ: 0.0006, Perc: 15.5599, G: 4.1383, D: 0.0360
+Epoch [1/1], Step [651/2120], Rec: 0.3012, VQ: 0.0060, Perc: 7.2240, G: 2.4029, D: 0.1788
+Epoch [1/1], Step [676/2120], Rec: 0.6439, VQ: 0.0003, Perc: 9.5466, G: 0.1037, D: 4.0956
+Epoch [1/1], Step [701/2120], Rec: 0.3747, VQ: 0.0003, Perc: 2.9707, G: 1.8211, D: 0.6355
+Epoch [1/1], Step [726/2120], Rec: 0.3981, VQ: 0.0004, Perc: 7.7469, G: 2.9946, D: 2.4963
+Epoch [1/1], Step [751/2120], Rec: 0.3191, VQ: 0.0040, Perc: 5.3462, G: 0.8927, D: 1.1999
+Epoch [1/1], Step [776/2120], Rec: 0.3781, VQ: 0.0851, Perc: 10.5446, G: 0.8849, D: 1.0671
+Epoch [1/1], Step [801/2120], Rec: 0.4659, VQ: 0.0006, Perc: 3.6446, G: 1.1041, D: 0.7423
+Epoch [1/1], Step [826/2120], Rec: 0.3236, VQ: 0.0004, Perc: 3.5165, G: 0.4851, D: 1.4656
+Epoch [1/1], Step [851/2120], Rec: 0.5207, VQ: 0.0375, Perc: 4.6021, G: 1.1521, D: 0.5789
+Epoch [1/1], Step [876/2120], Rec: 0.3106, VQ: 0.0012, Perc: 4.8151, G: 1.2892, D: 1.2755
+Epoch [1/1], Step [901/2120], Rec: 0.3086, VQ: 0.0009, Perc: 7.0223, G: 1.0541, D: 1.2523
+Epoch [1/1], Step [926/2120], Rec: 0.4192, VQ: 0.0007, Perc: 11.2107, G: 0.9521, D: 0.9401
+Epoch [1/1], Step [951/2120], Rec: 0.2907, VQ: 0.0047, Perc: 7.0556, G: 0.9765, D: 0.9187
+Epoch [1/1], Step [976/2120], Rec: 0.2538, VQ: 0.6225, Perc: 4.3484, G: 1.0061, D: 1.2994
+Epoch [1/1], Step [1001/2120], Rec: 0.3513, VQ: 0.0026, Perc: 4.3176, G: 0.8588, D: 1.0867
+Epoch [1/1], Step [1026/2120], Rec: 0.5567, VQ: 0.0001, Perc: 12.5174, G: 1.3605, D: 0.9573
+Epoch [1/1], Step [1051/2120], Rec: 0.3532, VQ: 0.0055, Perc: 3.7723, G: 1.0461, D: 2.7670
+Epoch [1/1], Step [1076/2120], Rec: 0.4009, VQ: 0.0014, Perc: 8.5749, G: 1.0273, D: 0.6309
+Epoch [1/1], Step [1101/2120], Rec: 0.4029, VQ: 0.0011, Perc: 13.0103, G: 1.2938, D: 1.2268
+Epoch [1/1], Step [1126/2120], Rec: 0.3549, VQ: 0.1478, Perc: 5.3778, G: 0.8623, D: 0.8810
+Epoch [1/1], Step [1151/2120], Rec: 0.4145, VQ: 0.0441, Perc: 9.3369, G: 1.2594, D: 0.8733
+Epoch [1/1], Step [1176/2120], Rec: 0.2072, VQ: 0.0401, Perc: 3.9472, G: 1.3082, D: 1.1939
+Epoch [1/1], Step [1201/2120], Rec: 0.3700, VQ: 0.0012, Perc: 7.0252, G: 0.9913, D: 1.2215
+Epoch [1/1], Step [1226/2120], Rec: 0.2992, VQ: 0.0002, Perc: 5.3160, G: 1.3126, D: 1.3533
+Epoch [1/1], Step [1251/2120], Rec: 0.3874, VQ: 0.0001, Perc: 3.9797, G: 1.5793, D: 0.8350
+Epoch [1/1], Step [1276/2120], Rec: 0.2357, VQ: 0.0001, Perc: 4.6759, G: 0.4922, D: 1.2474
+Epoch [1/1], Step [1301/2120], Rec: 0.3212, VQ: 0.0001, Perc: 2.3398, G: 1.3000, D: 0.4741
+Epoch [1/1], Step [1326/2120], Rec: 0.2449, VQ: 0.0021, Perc: 4.1304, G: 1.1488, D: 1.7252
+Epoch [1/1], Step [1351/2120], Rec: 0.4011, VQ: 0.0236, Perc: 3.7325, G: 0.3099, D: 2.5795
+Epoch [1/1], Step [1376/2120], Rec: 0.2523, VQ: 0.0003, Perc: 7.0147, G: 1.3644, D: 0.9748
+Epoch [1/1], Step [1401/2120], Rec: 0.3077, VQ: 0.0017, Perc: 9.2656, G: 1.7130, D: 0.6054
+Epoch [1/1], Step [1426/2120], Rec: 0.3069, VQ: 0.0104, Perc: 9.6614, G: 1.7210, D: 0.7494
+Epoch [1/1], Step [1451/2120], Rec: 0.3285, VQ: 0.0161, Perc: 5.3976, G: 0.8907, D: 1.1181
+Epoch [1/1], Step [1476/2120], Rec: 0.3942, VQ: 0.0002, Perc: 3.5741, G: 3.8013, D: 0.0519
+Epoch [1/1], Step [1501/2120], Rec: 0.2700, VQ: 0.0051, Perc: 4.2108, G: 2.1459, D: 1.1231
+Epoch [1/1], Step [1526/2120], Rec: 0.4656, VQ: 0.0007, Perc: 9.4111, G: 1.2970, D: 1.6248
+Epoch [1/1], Step [1551/2120], Rec: 0.1697, VQ: 0.0002, Perc: 5.4664, G: 1.7325, D: 1.4867
+Epoch [1/1], Step [1576/2120], Rec: 0.2999, VQ: 0.0013, Perc: 4.4591, G: 1.6955, D: 1.2136
+Epoch [1/1], Step [1601/2120], Rec: 0.1702, VQ: 0.0001, Perc: 2.8708, G: 0.7373, D: 1.2664
+Epoch [1/1], Step [1626/2120], Rec: 0.3172, VQ: 0.0234, Perc: 8.5446, G: 1.0762, D: 0.9173
+Epoch [1/1], Step [1651/2120], Rec: 0.2624, VQ: 0.0037, Perc: 5.7735, G: 2.0242, D: 0.6372
+Epoch [1/1], Step [1676/2120], Rec: 0.4366, VQ: 0.0022, Perc: 5.8716, G: 0.7329, D: 1.9451
+Epoch [1/1], Step [1701/2120], Rec: 0.5894, VQ: 0.0017, Perc: 10.8756, G: 5.0011, D: 0.3578
+Epoch [1/1], Step [1726/2120], Rec: 0.8329, VQ: 0.0003, Perc: 9.5571, G: 5.8434, D: 0.0109
+Epoch [1/1], Step [1751/2120], Rec: 0.5316, VQ: 0.0001, Perc: 7.5079, G: 0.7950, D: 0.8084
+Epoch [1/1], Step [1776/2120], Rec: 0.3221, VQ: 0.0003, Perc: 3.1979, G: 3.3734, D: 2.1997
+Epoch [1/1], Step [1801/2120], Rec: 0.4350, VQ: 0.0001, Perc: 8.6730, G: 2.1851, D: 0.3439
+Epoch [1/1], Step [1826/2120], Rec: 0.3531, VQ: 0.0002, Perc: 4.2833, G: 2.0642, D: 0.4614
+Epoch [1/1], Step [1851/2120], Rec: 0.4234, VQ: 0.0010, Perc: 9.2564, G: 1.7701, D: 0.5887
+Epoch [1/1], Step [1876/2120], Rec: 0.2869, VQ: 0.0001, Perc: 2.2290, G: 2.0989, D: 1.3797
+Epoch [1/1], Step [1901/2120], Rec: 0.3615, VQ: 0.0001, Perc: 7.5698, G: 1.7807, D: 1.7917
+Epoch [1/1], Step [1926/2120], Rec: 0.3297, VQ: 0.0027, Perc: 8.1235, G: 0.7184, D: 1.3756
+Epoch [1/1], Step [1951/2120], Rec: 0.2083, VQ: 0.0002, Perc: 3.2615, G: 1.1404, D: 1.2441
+Epoch [1/1], Step [1976/2120], Rec: 0.2160, VQ: 0.0091, Perc: 4.2379, G: 0.9841, D: 1.1088
+Epoch [1/1], Step [2001/2120], Rec: 0.3826, VQ: 0.0009, Perc: 9.7081, G: 0.8989, D: 1.0218
+Epoch [1/1], Step [2026/2120], Rec: 0.3580, VQ: 0.0013, Perc: 3.1681, G: 1.3623, D: 0.5322
+Epoch [1/1], Step [2051/2120], Rec: 0.2391, VQ: 0.0002, Perc: 6.9442, G: 1.6738, D: 1.0127
+Epoch [1/1], Step [2076/2120], Rec: 0.2769, VQ: 0.0031, Perc: 7.3966, G: 0.8334, D: 1.5119
+Epoch [1/1], Step [2101/2120], Rec: 0.3851, VQ: 0.0002, Perc: 11.1011, G: 1.1511, D: 0.7062
+Epoch [1/1] completed in 487.90s, Rec: 0.3877, VQ: 0.0598, Perc: 6.5271, G: 1.6773, D: 1.1002, LR: 0.000020
+Saved checkpoint to /home/garimella.sri/Super resolution project/output/transformer/checkpoints/vqgan_checkpoint_1.pth
+Training transformer from epoch 0...
+Training transformer for 1 epochs starting at epoch 0...
+/home/garimella.sri/.local/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+Epoch [1/1], Step [1/2120], Loss: 7.3909
+Epoch [1/1], Step [26/2120], Loss: 5.8559
+Epoch [1/1], Step [51/2120], Loss: 4.1516
+Epoch [1/1], Step [76/2120], Loss: 2.5473
+Epoch [1/1], Step [101/2120], Loss: 1.8344
+Epoch [1/1], Step [126/2120], Loss: 2.7200
+Epoch [1/1], Step [151/2120], Loss: 3.0621
+Epoch [1/1], Step [176/2120], Loss: 2.4295
+Epoch [1/1], Step [201/2120], Loss: 2.6184
+Epoch [1/1], Step [226/2120], Loss: 2.7902
+Epoch [1/1], Step [251/2120], Loss: 2.9501
+Epoch [1/1], Step [276/2120], Loss: 1.6473
+Epoch [1/1], Step [301/2120], Loss: 2.0254
+Epoch [1/1], Step [326/2120], Loss: 2.7247
+Epoch [1/1], Step [351/2120], Loss: 2.1854
+Epoch [1/1], Step [376/2120], Loss: 2.0809
+Epoch [1/1], Step [401/2120], Loss: 2.0891
+Epoch [1/1], Step [426/2120], Loss: 2.2625
+Epoch [1/1], Step [451/2120], Loss: 2.0522
+Epoch [1/1], Step [476/2120], Loss: 2.2047
+Epoch [1/1], Step [501/2120], Loss: 2.2490
+Epoch [1/1], Step [526/2120], Loss: 1.9567
+Epoch [1/1], Step [551/2120], Loss: 1.7082
+Epoch [1/1], Step [576/2120], Loss: 2.6078
+Epoch [1/1], Step [601/2120], Loss: 2.6161
+Epoch [1/1], Step [626/2120], Loss: 2.6313
+Epoch [1/1], Step [651/2120], Loss: 2.3633
+Epoch [1/1], Step [676/2120], Loss: 2.5173
+Epoch [1/1], Step [701/2120], Loss: 1.9831
+Epoch [1/1], Step [726/2120], Loss: 1.6190
+Epoch [1/1], Step [751/2120], Loss: 2.1069
+Epoch [1/1], Step [776/2120], Loss: 2.6204
+Epoch [1/1], Step [801/2120], Loss: 2.0716
+Epoch [1/1], Step [826/2120], Loss: 1.8997
+Epoch [1/1], Step [851/2120], Loss: 1.9942
+Epoch [1/1], Step [876/2120], Loss: 1.9665
+Epoch [1/1], Step [901/2120], Loss: 2.2697
+Epoch [1/1], Step [926/2120], Loss: 2.5731
+Epoch [1/1], Step [951/2120], Loss: 2.3997
+Epoch [1/1], Step [976/2120], Loss: 1.5027
+Epoch [1/1], Step [1001/2120], Loss: 2.0939
+Epoch [1/1], Step [1026/2120], Loss: 2.4186
+Epoch [1/1], Step [1051/2120], Loss: 1.7209
+Epoch [1/1], Step [1076/2120], Loss: 2.2740
+Epoch [1/1], Step [1101/2120], Loss: 2.4480
+Epoch [1/1], Step [1126/2120], Loss: 1.4765
+Epoch [1/1], Step [1151/2120], Loss: 2.6932
+Epoch [1/1], Step [1176/2120], Loss: 2.1642
+Epoch [1/1], Step [1201/2120], Loss: 2.4159
+Epoch [1/1], Step [1226/2120], Loss: 2.2434
+Epoch [1/1], Step [1251/2120], Loss: 2.1706
+Epoch [1/1], Step [1276/2120], Loss: 0.7843
+Epoch [1/1], Step [1301/2120], Loss: 1.7505
+Epoch [1/1], Step [1326/2120], Loss: 1.7268
+Epoch [1/1], Step [1351/2120], Loss: 1.2590
+Epoch [1/1], Step [1376/2120], Loss: 2.1837
+Epoch [1/1], Step [1401/2120], Loss: 2.1073
+Epoch [1/1], Step [1426/2120], Loss: 2.5621
+Epoch [1/1], Step [1451/2120], Loss: 1.9560
+Epoch [1/1], Step [1476/2120], Loss: 1.5783
+Epoch [1/1], Step [1501/2120], Loss: 1.9520
+Epoch [1/1], Step [1526/2120], Loss: 2.4482
+Epoch [1/1], Step [1551/2120], Loss: 2.0401
+Epoch [1/1], Step [1576/2120], Loss: 2.1844
+Epoch [1/1], Step [1601/2120], Loss: 1.6217
+Epoch [1/1], Step [1626/2120], Loss: 1.7790
+Epoch [1/1], Step [1651/2120], Loss: 2.3582
+Epoch [1/1], Step [1676/2120], Loss: 2.3115
+Epoch [1/1], Step [1701/2120], Loss: 2.8993
+Epoch [1/1], Step [1726/2120], Loss: 1.3044
+Epoch [1/1], Step [1751/2120], Loss: 1.9819
+Epoch [1/1], Step [1776/2120], Loss: 2.1015
+Epoch [1/1], Step [1801/2120], Loss: 1.9558
+Epoch [1/1], Step [1826/2120], Loss: 1.9536
+Epoch [1/1], Step [1851/2120], Loss: 2.4874
+Epoch [1/1], Step [1876/2120], Loss: 2.0599
+Epoch [1/1], Step [1901/2120], Loss: 2.2746
+Epoch [1/1], Step [1926/2120], Loss: 2.1636
+Epoch [1/1], Step [1951/2120], Loss: 1.8657
+Epoch [1/1], Step [1976/2120], Loss: 2.1763
+Epoch [1/1], Step [2001/2120], Loss: 2.3054
+Epoch [1/1], Step [2026/2120], Loss: 2.1575
+Epoch [1/1], Step [2051/2120], Loss: 2.2076
+Epoch [1/1], Step [2076/2120], Loss: 1.5353
+Epoch [1/1], Step [2101/2120], Loss: 2.2053
+Epoch [1/1] completed in 450.35s, Avg Loss: 2.2442, LR: 0.000100
+Saved best model with loss 2.2442
+Saved checkpoint to /home/garimella.sri/Super resolution project/output/transformer/checkpoints/transformer_checkpoint_1.pth
+Loaded best model from epoch 1 with loss 2.2442
+Evaluating model...
+Evaluating super-resolution model...
+Evaluation completed:
+Average PSNR: 13.61 dB
+[rank0]:[W421 21:46:21.281744764 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+(base) [garimella.sri@c2195 Super resolution project]$ python -m torch.distributed.launch --nproc_per_node=2 --master_port=65432 vqgan_transformer_sr_distributed_fixed.py
+/home/garimella.sri/.local/lib/python3.12/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects --local-rank argument to be set, please
+change it to read from os.environ['LOCAL_RANK'] instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+W0421 21:48:34.332000 236197 torch/distributed/run.py:792] 
+W0421 21:48:34.332000 236197 torch/distributed/run.py:792] *****************************************
+W0421 21:48:34.332000 236197 torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0421 21:48:34.332000 236197 torch/distributed/run.py:792] *****************************************
+Distributed environment detected: rank=0, world_size=2, local_rank=0
+Distributed environment detected: rank=1, world_size=2, local_rank=1
+Using 2 GPUs for training
+[rank1]:[W421 21:48:48.709463072 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank0]:[W421 21:48:48.721254809 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Process 1/2 ready on device cuda:1
+Process 0/2 ready on device cuda:0
+Found 2650 image pairs
+Training VQGAN from epoch 0...
+Training VQGAN for 1 epochs starting at epoch 0...
+/home/garimella.sri/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/garimella.sri/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or None for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing weights=VGG16_Weights.IMAGENET1K_V1. You can also use weights=VGG16_Weights.DEFAULT to get the most up-to-date weights.
+  warnings.warn(msg)
+/home/garimella.sri/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/garimella.sri/.local/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or None for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing weights=VGG16_Weights.IMAGENET1K_V1. You can also use weights=VGG16_Weights.DEFAULT to get the most up-to-date weights.
+  warnings.warn(msg)
+[rank1]:[W421 21:48:55.192678010 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank0]:[W421 21:48:56.497982658 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+Epoch [1/1], Step [1/1060], Rec: 0.4782, VQ: 0.0007, Perc: 12.2699, G: 0.6976, D: 1.3895
+Epoch [1/1], Step [26/1060], Rec: 0.4574, VQ: 0.0001, Perc: 6.4638, G: 0.0289, D: 8.3412
+Epoch [1/1], Step [51/1060], Rec: 0.5653, VQ: 0.0001, Perc: 4.7578, G: 1.5595, D: 0.2356
+Epoch [1/1], Step [76/1060], Rec: 0.4298, VQ: 0.0021, Perc: 8.1440, G: 3.2179, D: 0.5213
+Epoch [1/1], Step [101/1060], Rec: 0.4542, VQ: 0.0001, Perc: 6.0219, G: 3.2094, D: 0.0866
+Epoch [1/1], Step [126/1060], Rec: 0.5175, VQ: 0.0001, Perc: 7.5177, G: 0.8939, D: 0.6490
+Epoch [1/1], Step [151/1060], Rec: 0.3472, VQ: 0.0734, Perc: 3.8300, G: 2.2400, D: 1.0373
+Epoch [1/1], Step [176/1060], Rec: 0.4508, VQ: 0.0228, Perc: 9.3759, G: 0.9883, D: 1.6710
+Epoch [1/1], Step [201/1060], Rec: 0.3935, VQ: 0.0091, Perc: 7.7961, G: 1.8380, D: 0.4388
+Epoch [1/1], Step [226/1060], Rec: 0.3827, VQ: 0.0008, Perc: 5.5312, G: 1.5148, D: 0.4386
+Epoch [1/1], Step [251/1060], Rec: 0.4647, VQ: 0.0035, Perc: 7.8807, G: 1.6728, D: 0.5867
+Epoch [1/1], Step [276/1060], Rec: 0.4798, VQ: 0.0025, Perc: 4.3555, G: 5.9598, D: 1.6431
+Epoch [1/1], Step [301/1060], Rec: 0.4449, VQ: 0.0001, Perc: 11.6726, G: 2.2999, D: 0.1776
+Epoch [1/1], Step [326/1060], Rec: 0.2990, VQ: 0.0034, Perc: 7.1699, G: 5.2703, D: 2.1155
+Epoch [1/1], Step [351/1060], Rec: 0.4157, VQ: 0.0008, Perc: 3.0595, G: 0.4298, D: 1.7322
+Epoch [1/1], Step [376/1060], Rec: 0.3048, VQ: 0.0003, Perc: 5.3337, G: 1.7539, D: 1.3998
+Epoch [1/1], Step [401/1060], Rec: 0.4473, VQ: 0.0002, Perc: 3.5261, G: 2.2245, D: 0.3179
+Epoch [1/1], Step [426/1060], Rec: 0.5105, VQ: 0.0200, Perc: 4.5378, G: 1.9913, D: 0.2191
+Epoch [1/1], Step [451/1060], Rec: 0.4244, VQ: 0.0012, Perc: 6.9168, G: 1.6097, D: 0.7669
+Epoch [1/1], Step [476/1060], Rec: 0.4764, VQ: 0.0002, Perc: 7.1902, G: 1.5606, D: 0.5757
+Epoch [1/1], Step [501/1060], Rec: 0.3916, VQ: 0.0002, Perc: 4.1890, G: 1.6249, D: 0.3903
+Epoch [1/1], Step [526/1060], Rec: 0.3503, VQ: 0.0002, Perc: 3.6026, G: 1.9210, D: 0.2808
+Epoch [1/1], Step [551/1060], Rec: 0.3595, VQ: 0.0001, Perc: 12.8720, G: 2.1645, D: 0.2852
+Epoch [1/1], Step [576/1060], Rec: 0.4016, VQ: 0.0001, Perc: 9.4766, G: 1.6013, D: 1.7684
+Epoch [1/1], Step [601/1060], Rec: 0.4394, VQ: 0.0003, Perc: 7.0539, G: 1.5059, D: 0.5507
+Epoch [1/1], Step [626/1060], Rec: 0.2324, VQ: 0.0006, Perc: 3.8878, G: 1.0898, D: 0.9909
+Epoch [1/1], Step [651/1060], Rec: 0.4487, VQ: 0.0458, Perc: 2.3794, G: 0.5429, D: 1.1733
+Epoch [1/1], Step [676/1060], Rec: 0.5777, VQ: 1.3047, Perc: 3.7645, G: 1.2953, D: 0.5220
+Epoch [1/1], Step [701/1060], Rec: 0.3180, VQ: 0.0095, Perc: 9.3010, G: 1.1132, D: 0.9775
+Epoch [1/1], Step [726/1060], Rec: 0.3772, VQ: 0.0173, Perc: 5.5919, G: 0.3741, D: 3.4249
+Epoch [1/1], Step [751/1060], Rec: 0.2186, VQ: 0.0394, Perc: 4.2856, G: 0.7852, D: 1.6686
+Epoch [1/1], Step [776/1060], Rec: 0.3204, VQ: 0.0013, Perc: 5.5078, G: 0.9544, D: 1.7291
+Epoch [1/1], Step [801/1060], Rec: 0.1915, VQ: 0.0174, Perc: 2.8853, G: 0.9868, D: 1.2819
+Epoch [1/1], Step [826/1060], Rec: 0.2387, VQ: 0.0143, Perc: 5.6499, G: 1.2336, D: 1.3522
+Epoch [1/1], Step [851/1060], Rec: 0.4120, VQ: 0.0806, Perc: 10.8064, G: 1.1998, D: 0.8497
+Epoch [1/1], Step [876/1060], Rec: 0.3576, VQ: 0.0021, Perc: 7.5309, G: 2.0486, D: 0.9945
+Epoch [1/1], Step [901/1060], Rec: 0.3294, VQ: 1.1381, Perc: 8.7580, G: 0.6594, D: 1.0536
+Epoch [1/1], Step [926/1060], Rec: 0.4409, VQ: 0.0066, Perc: 9.0603, G: 1.3104, D: 0.9508
+Epoch [1/1], Step [951/1060], Rec: 0.3133, VQ: 0.0003, Perc: 7.3320, G: 1.6013, D: 0.4435
+Epoch [1/1], Step [976/1060], Rec: 0.2232, VQ: 0.0027, Perc: 3.3278, G: 2.0073, D: 0.9530
+Epoch [1/1], Step [1001/1060], Rec: 0.5514, VQ: 0.0008, Perc: 9.6547, G: 1.3211, D: 0.5245
+Epoch [1/1], Step [1026/1060], Rec: 0.3314, VQ: 0.0647, Perc: 7.2776, G: 0.4750, D: 2.5095
+Epoch [1/1], Step [1051/1060], Rec: 0.4476, VQ: 0.0290, Perc: 11.3517, G: 1.1676, D: 1.2116
+Epoch [1/1] completed in 351.45s, Rec: 0.3963, VQ: 0.1196, Perc: 6.5260, G: 1.7618, D: 1.0573, LR: 0.000020
+Saved checkpoint to /home/garimella.sri/Super resolution project/output/transformer/checkpoints/vqgan_checkpoint_1.pth
+Training transformer from epoch 0...
+Training transformer for 1 epochs starting at epoch 0...
+/home/garimella.sri/.local/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+/home/garimella.sri/.local/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+Epoch [1/1], Step [1/1060], Loss: 7.3768
+Epoch [1/1], Step [26/1060], Loss: 3.8966
+Epoch [1/1], Step [51/1060], Loss: 3.0938
+Epoch [1/1], Step [76/1060], Loss: 0.3264
+Epoch [1/1], Step [101/1060], Loss: 1.5964
+Epoch [1/1], Step [126/1060], Loss: 0.8285
+Epoch [1/1], Step [151/1060], Loss: 1.7248
+Epoch [1/1], Step [176/1060], Loss: 1.6437
+Epoch [1/1], Step [201/1060], Loss: 1.6601
+Epoch [1/1], Step [226/1060], Loss: 0.7240
+Epoch [1/1], Step [251/1060], Loss: 0.9028
+Epoch [1/1], Step [276/1060], Loss: 1.2310
+Epoch [1/1], Step [301/1060], Loss: 0.7525
+Epoch [1/1], Step [326/1060], Loss: 0.6937
+Epoch [1/1], Step [351/1060], Loss: 0.4665
+Epoch [1/1], Step [376/1060], Loss: 1.7651
+Epoch [1/1], Step [401/1060], Loss: 0.1037
+Epoch [1/1], Step [426/1060], Loss: 0.4068
+Epoch [1/1], Step [451/1060], Loss: 0.6532
+Epoch [1/1], Step [476/1060], Loss: 0.9488
+Epoch [1/1], Step [501/1060], Loss: 1.1342
+Epoch [1/1], Step [526/1060], Loss: 0.3670
+Epoch [1/1], Step [551/1060], Loss: 0.5437
+Epoch [1/1], Step [576/1060], Loss: 1.1083
+Epoch [1/1], Step [601/1060], Loss: 0.9170
+Epoch [1/1], Step [626/1060], Loss: 0.3635
+Epoch [1/1], Step [651/1060], Loss: 0.3416
+Epoch [1/1], Step [676/1060], Loss: 0.4506
+Epoch [1/1], Step [701/1060], Loss: 1.0262
+Epoch [1/1], Step [726/1060], Loss: 1.3464
+Epoch [1/1], Step [751/1060], Loss: 0.6958
+Epoch [1/1], Step [776/1060], Loss: 0.4358
+Epoch [1/1], Step [801/1060], Loss: 0.4321
+Epoch [1/1], Step [826/1060], Loss: 1.1582
+Epoch [1/1], Step [851/1060], Loss: 1.6782
+Epoch [1/1], Step [876/1060], Loss: 0.5759
+Epoch [1/1], Step [901/1060], Loss: 0.7331
+Epoch [1/1], Step [926/1060], Loss: 1.4604
+Epoch [1/1], Step [951/1060], Loss: 0.2085
+Epoch [1/1], Step [976/1060], Loss: 0.8983
+Epoch [1/1], Step [1001/1060], Loss: 0.7267
+Epoch [1/1], Step [1026/1060], Loss: 0.8615
+Epoch [1/1], Step [1051/1060], Loss: 0.7166
+Epoch [1/1] completed in 302.38s, Avg Loss: 0.9496, LR: 0.000100
+Saved best model with loss 0.9496
+Saved checkpoint to /home/garimella.sri/Super resolution project/output/transformer/checkpoints/transformer_checkpoint_1.pth
+Loaded best model from epoch 1 with loss 0.9496
+Evaluating model...
+Evaluating super-resolution model...
+Evaluation completed:
+Average PSNR: 11.38 dB
+[rank0]:[W421 22:00:02.807891394 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+(base) [garimella.sri@c2195 Super resolution project]$ 
